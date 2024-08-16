@@ -1,0 +1,11 @@
+import anndata as ad
+import numpy as np
+import scvi
+
+# note: we only integrate the "good enough" slices
+adata = ad.read_h5ad('nice.h5ad')#
+scvi.model.SCVI.setup_anndata(adata, batch_key="sid")
+vae = scvi.model.SCVI(adata)
+vae.train()
+adata.obsm["X_scVI"] = vae.get_latent_representation()
+np.savetxt('scVI.csv',adata.obsm["X_scVI"],delimiter=",")
