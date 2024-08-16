@@ -5,7 +5,7 @@ All analysis scripts for paper "An Organ-wide Spatiotemporal Transcriptomic and 
 
 ## The full workflow of this paper
 
-![alt text](image.png)
+![alt text](image-1.png)
 
 ## The detail relationship of the analysis and all figures
 
